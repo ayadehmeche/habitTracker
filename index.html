@@ -9,7 +9,7 @@
     <!-- TITLE AND SUBTITLE -->
      <h1 id="title">Month</h1>
      <h2 id="subtitle">Monthly Habit Tracker</h2>
-    
+
      <!-- CALENDAR AREA -->
       <div id="calendarContainer">
         <div id="calendarDiv">
@@ -115,7 +115,7 @@
         background-color: pink;
         line-height: 0px;
     }
-    
+
     #calendarContent{
         padding: 20px;
         border: 2px solid black;
@@ -139,7 +139,7 @@
     }
 
     /* je vais devoir enlever ce style maybe */
-    #resetButton{ 
+    #resetButton{
         width: 140px;
         height: 42px;
         margin: 1.5em;
@@ -205,7 +205,7 @@
 
     var daysCompleted = 0;
     var totalDays = document.getElementById("totalDays");
-    totalDays.innerHTML = "0/" + daysInThisMonth; 
+    totalDays.innerHTML = "0/" + daysInThisMonth;
     // e.g 5th index => 6th month => June => 30 days
 
     var daysCompleted = 0;
@@ -240,12 +240,12 @@
     }
 
             // INITIALISE COMPLETED ARRAY
-        
+
         var completed = new Array(31);
         for (var i = 0; i < dayCount; i++){
             var tempString = "" + (currentMonth + 1) + "-" + (i + 1) + "-" + currentYear;
             console.log("storing date" + tempString);
-            
+
             var tempDay = localStorage.getItem(tempString);
             console.log(tempDay);
             if(tempDay ==  null || tempDay == "false"){
@@ -288,12 +288,12 @@
 
             if(localStorage.getItem(storageString) === "false"){
                 selectedDate.style.backgroundColor = "pink";
-                localStorage.setItem(storageString, true);
+                localStorage.setItem(storageString, "true");
                 daysCompleted++;
 
-            } else if(localStorage.getItem(storageString) === "true");{
+            } else if(localStorage.getItem(storageString) === "true"){
                 selectedDate.style.backgroundColor = "white";
-                localStorage.setItem(storageString, false);
+                localStorage.setItem(storageString, "false");
                 daysCompleted--;
             }
 
